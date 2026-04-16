@@ -1,6 +1,4 @@
 jdk:
   - openjdk17
 install:
-  - gradle --version
-  - gradle wrapper --gradle-version 8.5
   - ./gradlew clean publishToMavenLocal -x test
