@@ -29,13 +29,38 @@ enum class EntitlementSource {
 
 @Serializable
 data class Entitlement(
-    @SerialName("entitlement") val entitlement: String,
+    @SerialName("id") val id: String,
     @SerialName("status") val status: EntitlementStatus,
     @SerialName("source") val source: EntitlementSource,
+    @SerialName("platform") val platform: Platform,
     @SerialName("product_id") val productId: String,
     @SerialName("expires_at") val expiresAt: String? = null,
-    @SerialName("renewed_at") val renewedAt: String? = null,
-    @SerialName("grace_expires_at") val graceExpiresAt: String? = null,
+)
+
+@Serializable
+data class OfferingProduct(
+    @SerialName("product_id") val productId: String,
+    @SerialName("platform") val platform: Platform,
+    @SerialName("period_days") val periodDays: Int? = null,
+    @SerialName("price_usd_cents") val priceUsdCents: Int? = null,
+    @SerialName("entitlement") val entitlement: String,
+)
+
+@Serializable
+data class Offering(
+    @SerialName("slug") val slug: String,
+    @SerialName("title") val title: String,
+    @SerialName("subtitle") val subtitle: String? = null,
+    @SerialName("features") val features: List<String> = emptyList(),
+    @SerialName("cta_label") val ctaLabel: String,
+    @SerialName("locale") val locale: String? = null,
+    @SerialName("products") val products: List<OfferingProduct> = emptyList(),
+)
+
+@Serializable
+data class TrackResult(
+    @SerialName("matched_rule_id") val matchedRuleId: String? = null,
+    @SerialName("show_paywall") val showPaywall: Offering? = null,
 )
 
 class StubkitError(
