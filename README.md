@@ -19,7 +19,7 @@ Then in your module `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.stubkithq:stubkit-kotlin:1.0.1")
+    implementation("com.github.stubkithq:stubkit-kotlin:1.0.2")
 }
 ```
 
@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.stubkithq:stubkit-kotlin:1.0.1'
+    implementation 'com.github.stubkithq:stubkit-kotlin:1.0.2'
 }
 ```
 
