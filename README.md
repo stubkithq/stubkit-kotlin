@@ -4,18 +4,36 @@ Kotlin SDK for [Stubkit](https://stubkit.com) subscription validation API. Verif
 
 ## Installation
 
-Add to your `build.gradle.kts`:
+Add JitPack to your root `settings.gradle.kts`:
+
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+```
+
+Then in your module `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.stubkit:stubkit:1.0.1")
+    implementation("com.github.stubkithq:stubkit-kotlin:1.0.1")
 }
 ```
 
 Or in Groovy `build.gradle`:
 
 ```gradle
-implementation 'com.stubkit:stubkit:1.0.1'
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.stubkithq:stubkit-kotlin:1.0.1'
+}
 ```
 
 ## Quick Start
